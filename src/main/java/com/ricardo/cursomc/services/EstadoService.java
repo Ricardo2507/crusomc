@@ -20,7 +20,7 @@ public class EstadoService {
 	@Autowired
 	private EstadoRepository repo;
 	
-	public Estado buscar(Integer id)  {
+	public Estado find(Integer id)  {
 		/** a exceção será recebida pela camada REST(de recursos) **/
 		Optional<Estado> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(

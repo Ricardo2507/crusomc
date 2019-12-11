@@ -20,7 +20,7 @@ public class CidadeService {
 	@Autowired
 	private CidadeRepository repo;
 	
-	public Cidade buscar(Integer id)  {
+	public Cidade find(Integer id)  {
 		/** a exceção será recebida pela camada REST(de recursos) **/
 		Optional<Cidade> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(

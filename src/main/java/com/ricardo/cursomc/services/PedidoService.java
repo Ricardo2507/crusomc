@@ -18,7 +18,7 @@ public class PedidoService {
 	@Autowired
 	private PedidoRepository repo;
 	
-	public Pedido buscar(Integer id)  {
+	public Pedido find(Integer id)  {
 		/** a exceção será recebida pela camada REST(de recursos) **/
 		Optional<Pedido> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(

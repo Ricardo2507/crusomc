@@ -26,9 +26,9 @@ public class ProdutoResource {
 	/** receberá o arqgumento de pesquisa no banco de dados, no caso o id **/
 	/** ResponseEntity --> armazana várias informações de uma resposta HTTP para um serviço REST**/
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-	public ResponseEntity<?> find(@PathVariable Integer id) {
+	public ResponseEntity<Produto> find(@PathVariable Integer id) {
 		
-		Produto obj = service.buscar(id);
+		Produto obj = service.find(id);
 		
 		
 		return ResponseEntity.ok().body(obj);
